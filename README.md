@@ -55,7 +55,7 @@ Base model: `bert-base-uncased`
 | Hyperparameter    | Value         |
 |-------------------|---------------|
 |Epochs	            |5              |
-|Learning Rate	    |2e-5           |
+|Learning Rate	    |5e-5           |
 |Optimizer	        |AdamW          |
 |Weight Decay	    |0.01           |
 |Scheduler	        |linear         |
@@ -66,14 +66,26 @@ Base model: `bert-base-uncased`
 |Device	            |cuda (GPU)  |
 
 ## Evaluation
+Three student models—Odd Layer, Even Layer, and LoRA—were trained and evaluated on the hate speech classification task using the HateXplain dataset.
+- The Odd Layer model achieved the best overall performance, with the lowest training loss (0.2746) and a test F1-score of 65.21%, indicating effective learning and generalization.
+- The Even Layer model, despite a much higher training loss (0.8450), matched the Odd Layer model in all test metrics, suggesting convergence to a similar solution.
+- The LoRA model underperformed in both training and testing, with the highest loss and the lowest F1-score (38.33%), indicating difficulty in learning from the data under the current setup.
 
-### Result
+### Summary result
 
+| Model Type    |Training Loss| Test Loss | Accuracy| Precision | Recall |F1-score|
+|---------------|-------------|-----------|---------|-----------|--------|--------|
+| Odd Layer     | **0.2746**   |0.8413 |0.6620 |0.6513 | 0.6532    |0.6521  | 
+| Even Layer    | 0.8450   |0.8413 |0.6620 |0.6513 | 0.6532    |0.6521  |
+| LoRA          | 1.0008   |1.0147 |0.4890 |0.3996 | 0.4553    |0.3833  |
 
-![accuracy](rs1.png)
+In conclusion, Odd Layer distillation yielded the most efficient training and strong evaluation performance, while LoRA requires further tuning to be competitive in this task.
+
 #### Accuracy Comparison
-![f1score](rs1.png)
+![accuracy](rs1.png)
 #### F1 Score
+![f1score](rs1.png)
+
 
 ## Application
 ### Application Development
@@ -85,13 +97,12 @@ The web application is a Streamlit-based toxic comment classifier that allows us
 4) **View Results:** The prediction is shown with a colored alert and confidence scores for each class.
 
 ### Screenshots
-![Webapp1](ss1.png)
 #### Hate Speech
-![Webapp1](ss2.png)
+![Webapp1](ss1.png)
 #### Offensive speech
-![Webapp1](ss3.png)
+![Webapp1](ss2.png)
 #### Normal input
-![Webapp2](ss4.gif)
+![Webapp1](ss3.png)
 #### How to use webapp
-
+![Webapp2](ss4.gif)
 ## Conclusion

@@ -9,7 +9,7 @@ st.markdown("<h2>Toxic Comment Classifier</h2>", unsafe_allow_html=True)
 st.markdown("Enter a sentence below, and the model will predict whether it is **toxic**, **normal**, or **offensive**.")
 
 # ✅ Load tokenizer and model from the saved student_model_odd directory
-MODEL_PATH = "./saved_models/student_model_odd"  # Update to match your saved folder
+MODEL_PATH = "../saved_models/student_model_odd"  # Update to match your saved folder
 
 @st.cache_resource
 def load_model():
