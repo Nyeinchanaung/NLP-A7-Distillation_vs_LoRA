@@ -106,4 +106,3 @@ The web application is a Streamlit-based toxic comment classifier that allows us
 ![Webapp1](ss3.png)
 #### How to use webapp
 ![Webapp2](ss4.gif)
-## Conclusion
