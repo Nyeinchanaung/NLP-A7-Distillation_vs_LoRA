@@ -81,11 +81,12 @@ Three student models—Odd Layer, Even Layer, and LoRA—were trained and evalua
 
 In conclusion, Odd Layer distillation yielded the most efficient training and strong evaluation performance, while LoRA requires further tuning to be competitive in this task.
 
-#### Accuracy Comparison
+#### Evaluation Loss 
+![accuracy](rs0.png)
+#### Accuracy
 ![accuracy](rs1.png)
 #### F1 Score
-![f1score](rs1.png)
-
+![f1score](rs2.png)
 
 ## Application
 ### Application Development
